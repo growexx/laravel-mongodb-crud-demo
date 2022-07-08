@@ -1,0 +1,6 @@
+projectKey=crud-operation
+serverUrl=https://quality.growexx.com
+serverVersion=8.9.6.50800
+dashboardUrl=https://quality.growexx.com/dashboard?id=crud-operation
+ceTaskId=AYHdoE3EqsoXjOebMC_z
+ceTaskUrl=https://quality.growexx.com/api/ce/task?id=AYHdoE3EqsoXjOebMC_z
