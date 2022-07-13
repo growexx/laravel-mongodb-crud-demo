@@ -77,7 +77,7 @@ DB_HOST=127.0.0.1
 DB_PORT=27017
 DB_DATABASE=mvccruddemo
 DB_USERNAME=mvccrud
-DB_PASSWORD="<password>"
+DB_PASSWORD="password"
 
 ## Install Laravel-MongoDB Package
 
