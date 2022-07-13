@@ -1,4 +1,5 @@
 @if ($paginator->hasPages())
+
     <ul class="pagination">
 
         {{-- Pagination Elements --}}
