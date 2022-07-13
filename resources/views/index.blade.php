@@ -58,5 +58,5 @@
 			</div>
 		@endforeach
 	</div>
-    {!! $tasks->links() !!}
+    {!! $tasks->links('pagination') !!}
 @endsection

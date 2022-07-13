@@ -35,15 +35,9 @@
 				<div class="form-group">
 					<label>Status *</label>
 					<select name="status" class="form-control">
-						<?php
-							foreach( $statusMap as $key => $value ) {
-
-								if( !empty( old( 'status' ) ) && $key == old( 'status' ) ) {
-						?>
-							<option value="<?= $key ?>" selected><?= $value ?></option>
-						<?php } else { ?>
-							<option value="<?= $key ?>"><?= $value ?></option>
-						<?php } } ?>
+                        <option value="10">New</option>
+                        <option value="20">In Progress</option>
+                        <option value="30">Completed</option>
 					</select>
 				</div>
 			</div>
@@ -65,14 +59,6 @@
 				<div class="form-group">
 					<label>Hours Consumed</label>
 					<input type="text" name="hoursConsumed" class="form-control" placeholder="Hours Consumed" value="{{old('hoursConsumed')}}">
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-12 col-md-12">
-				<div class="form-group">
-					<div class="form-group">
-						<label>Notes</label>
-						<textarea name="content" class="form-control" placeholder="Notes">{{old('content')}}</textarea>
-					</div>
 				</div>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-12 text-center p-3">

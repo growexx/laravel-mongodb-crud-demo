@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
+    const VALIDATION = "numeric|nullable|min:0|not_in:0";
+    const ROUTETOINDEX = "tasks.index";
 
     public function index()
     {
@@ -20,37 +22,31 @@ class TaskController extends Controller
 
     public function create()
     {
-
-        $statusMap = Task::$statusMap;
-
-        return view('create', compact('statusMap'));
+        return view('create');
     }
 
     public function store(Request $request)
     {
-
         $request->validate([
             'title' => 'required',
             'status' => 'required|numeric|min:0|not_in:0',
-            'hoursRequired' => 'numeric|nullable|min:0|not_in:0',
-            'hoursConsumed' => 'numeric|nullable|min:0|not_in:0',
+            'hoursRequired' => $this::VALIDATION,
+            'hoursConsumed' => $this::VALIDATION,
         ]);
 
         Task::create($request->all());
 
-        return redirect()->route('tasks.index')
+        return redirect()->route($this::ROUTETOINDEX)
             ->with('success', 'Task created successfully.');
     }
 
     public function show(Task $task)
     {
-
         return view('show', compact('task'));
     }
 
     public function edit(Task $task)
     {
-
         $statusMap = Task::$statusMap;
 
         return view('edit', compact('task', 'statusMap'));
@@ -62,22 +58,21 @@ class TaskController extends Controller
         $request->validate([
             'title' => 'required',
             'status' => 'required|numeric|min:0|not_in:0',
-            'hoursRequired' => 'numeric|nullable|min:0|not_in:0',
-            'hoursConsumed' => 'numeric|nullable|min:0|not_in:0',
+            'hoursRequired' => $this::VALIDATION,
+            'hoursConsumed' => $this::VALIDATION,
         ]);
 
         $task->update($request->all());
 
-        return redirect()->route('tasks.index')
+        return redirect()->route($this::ROUTETOINDEX)
             ->with('success', 'Task updated successfully.');
     }
 
     public function destroy(Task $task)
     {
-
         $task->delete();
 
-        return redirect()->route('tasks.index')
+        return redirect()->route($this::ROUTETOINDEX)
             ->with('success', 'Task deleted successfully.');
     }
 }

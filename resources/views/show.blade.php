@@ -12,7 +12,7 @@
 			</a>
 		</div>
 	</div>
-	<div class="row pt-3">
+	<div class="row pt-3 border border-solid">
 		<div class="col-xs-6 col-sm-6 col-md-6">
 			<strong>Title - </strong> {{ $task->title }}
 		</div>
@@ -20,15 +20,12 @@
 			<strong>Status - </strong> {{ $task->getStatusStr() }}
 		</div>
 	</div>
-	<div class="row pt-3">
-		<div class="col-xs-6 col-sm-6 col-md-6">
+	<div class="row pt-3 border border-solid">
+		<div class="col-xs-12 col-sm-12 col-md-12">
 			<strong>Description - </strong> {{ $task->description }}
 		</div>
-		<div class="col-xs-6 col-sm-6 col-md-6">
-			<strong>Notes - </strong> {{ $task->notes }}
-		</div>
 	</div>
-	<div class="row pt-3">
+	<div class="row pt-3 border border-solid">
 		<div class="col-xs-6 col-sm-6 col-md-6">
 			<strong>Hours Estimated - </strong> {{ $task->hoursRequired }}
 		</div>
